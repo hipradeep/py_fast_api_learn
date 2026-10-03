@@ -40,6 +40,7 @@ py_fast_api_learn/
 │           ├── router.py
 │           └── endpoints/       # health.py users.py inventory.py orders.py
 ├── alembic/                     # migration environment + versions
+├── docs/ALEMBIC.md              # how migrations are wired and used
 ├── scripts/seed.py              # demo data
 ├── tests/                       # pytest suite
 ├── .env / .env.example
@@ -106,6 +107,10 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=1234
 POSTGRES_DB=py_crud
 ```
+
+## Docs
+
+- [Alembic guide](docs/ALEMBIC.md) — migration workflow, autogenerate pitfalls, hand-written DDL patterns
 
 ## Run
 
