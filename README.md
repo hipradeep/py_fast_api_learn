@@ -44,6 +44,7 @@ py_fast_api_learn/
 ├── scripts/seed.py              # demo data
 ├── tests/                       # pytest suite
 ├── .env / .env.example
+├── pyproject.toml               # project metadata + ruff/mypy/pytest config
 ├── alembic.ini
 └── requirements.txt
 ```
@@ -96,6 +97,7 @@ python -m venv .venv
 # source .venv/bin/activate     # macOS / Linux
 
 pip install -r requirements.txt
+pip install ruff mypy                # optional, configured in pyproject.toml
 ```
 
 Database connection lives in `.env` (already set for this project):
@@ -128,6 +130,8 @@ uvicorn app.main:app --reload
 
 ```bash
 pytest
+ruff check .
+mypy app
 ```
 
 The suite runs against the configured database and truncates its own rows, so point
